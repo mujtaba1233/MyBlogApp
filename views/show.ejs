@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+ <style media="screen">
+    .posts{
+      min-width:400px;
+      min-height:400px;
+      max-width:400px;
+      max-height:400px;
+    }
+</style>
+<% result.forEach((result) => { %>
+ <div class="card text-center" >
+    <h2><%= result.title %></h2>
+    <h5><%= result.date.toDateString() %> </h5>
+    <div class="fakeimg" style="height:auto;">
+      <img class="posts" src="<%= result.image %>">
+    </div>
+    <p><%= result.body %> </p>
+  </div>
+<% }); %>
+<%- include("partials/footer.ejs") %>
